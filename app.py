@@ -1,4 +1,3 @@
-# app.py
 import os
 from flask import Flask, jsonify
 import psycopg2
@@ -6,7 +5,7 @@ import psycopg2
 app = Flask(__name__)
 
 def get_db_connection():
-    DATABASE_URL = "postgresql://postgres:YGsnNDAxyucspykFuPvwfJAExUcBIzht@postgres.railway.internal:5432/railway"
+    DATABASE_URL = os.environ['DATABASE_URL']
     return psycopg2.connect(DATABASE_URL)
 
 @app.route('/')
