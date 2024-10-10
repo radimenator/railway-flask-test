@@ -6,7 +6,7 @@ import psycopg2
 app = Flask(__name__)
 
 def get_db_connection():
-    DATABASE_URL = os.environ['DATABASE_URL']
+    DATABASE_URL = "postgresql://postgres:YGsnNDAxyucspykFuPvwfJAExUcBIzht@postgres.railway.internal:5432/railway"
     return psycopg2.connect(DATABASE_URL)
 
 @app.route('/')
